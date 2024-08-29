@@ -1,6 +1,3 @@
-Specification take from [wikipedia](https://en.wikipedia.org/wiki/Cron#Cron_expression)
-
-
 ### Cron Expression Format:
 five time fields separated by space (minute, hour, day of month, month, day of week)
 
@@ -8,8 +5,16 @@ five time fields separated by space (minute, hour, day of month, month, day of w
 
 | Field              | Range                      | Allowed Special Characters  |
 |  ------------------|:---------------------------|:---------------------------:|
-| Minute:            | 0-59                       | * , -                       |
-| Hour:              | 0-23                       | * , -                       |
-| Day of Month:      | 1-31                       | * , - ? L W                 |
-| Month:             | 1-12                       | * , -                       |
-| Day of Week:       | 0-6(Sunday to Saturday)    | * , - ? L #                 |
+| Minute:            | 0-59                       | * , - /                     |
+| Hour:              | 0-23                       | * , - /                     |
+| Day of Month:      | 1-31                       | * , - / L W                 |
+| Month:             | 1-12                       | * , - /                     |
+| Day of Week:       | 1-7(Sunday to Saturday)    | * , - / L #                 |
+
+#### Notes: L, W and # not supported in this implementation
+
+
+## Compilation and Run
+1. build by running command `go build . `
+2. above step will create a binery `cron-service`
+3. run this binary with cron command, example  `./cron-service "15 0 1,15 * 1-5 /usr/bin/find"`
