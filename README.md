@@ -18,3 +18,8 @@ five time fields separated by space (minute, hour, day of month, month, day of w
 1. build by running command `go build . `
 2. above step will create a binary `cron-service`
 3. run this binary with cron command, example  `./cron-service "15 0 1,15 * 1-5 /usr/bin/find"`
+
+## Test done with below configuration-
+1. go version:  go1.21.1 darwin/arm64
+2. OS: macOS Monterey verson 12.5
+
